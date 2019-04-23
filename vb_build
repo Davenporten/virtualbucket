@@ -4,6 +4,5 @@
 
 # TODO: Add options and --help
 # TODO: Add catches and messages for missing dependencies
-mkdir ./$1 && cd ./$1 && virtualenv -p python3 .env
-
+mkdir ./$1 && cd ./$1 && virtualenv -p python3 .env && cp /etc/virtualbucket/proto_activate ./activate && cp /etc/virtualbucket/proto_deactivate ./deactivate
 

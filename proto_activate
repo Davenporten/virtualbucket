@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# TODO: save PATH in 
+sed -i 's@VB_OLD_PATH=.*$@VB_OLD_PATH='"$PWD"'@' /etc/profile.d/vb_ev.sh
+sed -i 's/VB_ACTIVE=false/VB_ACTIVE=true/' /etc/profile.d/vb_ev.sh
