@@ -2,6 +2,7 @@
 
 # copy vb_* to /usr/bin/. but not right now, not until things are working
 mkdir /etc/virtualbucket && cp proto_config /etc/virtualbucket/config
+cp proto_activate proto_deactivate proto_remove /etc/virtualbucket/.
 mkdir /etc/profile.d/virtualbucket && cp proto_ev.sh /etc/profile.d/virtualbucket/ev.sh
 
 

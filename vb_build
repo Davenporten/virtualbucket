@@ -1,1 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env bash
+
+# TODO: need to do something to add the configs, but for now we'll just do the basics
+
+# TODO: Add options and --help
+# TODO: Add catches and messages for missing dependencies
+mkdir ./$1 && cd ./$1 && virtualenv -p python3 .env
+
+
