@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# copy vb_* to /usr/bin/. but not right now, not until things are working
+mkdir /etc/virtualbucket && cp proto_config /etc/virtualbucket/config
+mkdir /etc/profile.d/virtualbucket && cp proto_ev.sh /etc/profile.d/virtualbucket/ev.sh
+
+
