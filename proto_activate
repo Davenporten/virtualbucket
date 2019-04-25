@@ -1,5 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# TODO: save PATH in 
-sed -i 's@VB_OLD_PATH=.*$@VB_OLD_PATH='"$PWD"'@' /etc/profile.d/vb_ev.sh
-sed -i 's/VB_ACTIVE=false/VB_ACTIVE=true/' /etc/profile.d/vb_ev.sh
+if grep -xqs "VB_ACTIVE=true" /etc/environment
+then
+    echo -e "\nCannot activate, another virtualbucket is already active.\nRun vb_deactivate to stop the other bucket and run activate again.\n"
+else
+    sudo sed -i 's/VB_ACTIVE=false/VB_ACTIVE=true/' /etc/environment
+    PATH="$PWD/.env/bin:$PATH"
+fi

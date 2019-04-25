@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sed -i 's@#!.*$@#!'"$(which bash)"'@' setup
+sed -i 's@#!.*$@#!'"$(which bash)"'@' proto_activate
