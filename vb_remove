@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo rm -rf /etc/virtualbucket
+sed -i '/VB_ACTIVE=.*$/d' /etc/environment
+PATH=$(echo $PATH | sed 's@/.*/.env/bin:@@')

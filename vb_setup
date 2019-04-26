@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo mkdir -p /etc/virtualbucket && sudo cp proto_config /etc/virtualbucket/config && sudo cp proto_activate proto_deactivate /etc/virtualbucket/.
+
+if ! grep -qs "VB_ACTIVE" /etc/environment
+then
+    sudo echo -e 'VB_ACTIVE=false' >> /etc/environment
+else
+    sudo sed -i 's@VB_ACTIVE=.*$@VB_ACTIVE=false@' /etc/environment
+    PATH=$(echo $PATH | sed 's@/.*/.env/bin:@@')
+fi
+
+
