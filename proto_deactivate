@@ -1,4 +1,5 @@
 #!/bin/bash
 
+echo "Deactivating"
 PATH=$(echo $PATH | sed 's@/.*/.env/bin:@@')
 sudo sed -i 's/VB_ACTIVE=true/VB_ACTIVE=false/' /etc/environment

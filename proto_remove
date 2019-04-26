@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Removing"
 sudo rm -rf /etc/virtualbucket
 sudo sed -i '/VB_ACTIVE=.*$/d' /etc/environment
 PATH=$(echo $PATH | sed 's@/.*/.env/bin:@@')

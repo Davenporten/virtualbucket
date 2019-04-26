@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Activating"
 if grep -xqs "VB_ACTIVE=true" /etc/environment
 then
     echo -e "\nCannot activate, another virtualbucket is already active.\nRun vb_deactivate to stop the other bucket and run activate again.\n"
