@@ -5,7 +5,50 @@ The purpose of *virtualbucket* is to have a modular way of turning on or off dif
 VirtualBucket does two things: 1) creates buckets, and 2) runs buckets, giving you access to whatever tools you included when you created the bucket.
 
 ### Creating Buckets
+This should be done on your home machine, where you have internet access and the ability to install whatever you want. You can create a bucket on your home machine and also run the bucket it there, but these steps will not work and are not meant to be run on a machine that does not have these capabilities.
 
+The following steps should be run inside of the virtualbucket dir and you will need sudo privileges.
+
+Steps:
+
+1. Add what you'd like to be installed in the bucket to proto_config. The name of each package should be on it's own line and appear as it would if you were installing it using pip. 'django' is already in there as an example, feel free to remove it.
+
+2. Run:
+
+  $ source vb_setup
+
+3. Go to wherever you'd like to create your bucket and run
+
+  $ vb_build &lt;bucket_name&gt;
+
+4. From here you can use the bucket you've create locally or package it to move it somewhere else
+
+From here you can use the bucket you've created locally or create a tarball of it to move it somewhere else by running:
+
+  $ vb_tarup &lt;bucket_name&gt;
+
+### Use Bucket
+These steps can be followed if you are using the bucket on your home machine or somewhere else, unless otherwise specified.
+
+  $ cd &lt;bucket_name&gt;
+
+If you are running on a machine that is NOT your home machine you will need to run
+
+  $ source setup
+
+Activate the bucket:
+
+  $ source activate
+
+You can then use the tools the bucket provides anywhere on your machine.
+
+Deactivate the bucket (this can be called anywhere in your machine):
+
+  $ source deactivate
+
+If you would like to remove anything that setup created run
+
+  $ source remove
 
 **Note**: Below is not complete and needs to be updated.
 ## Explanation of Files
