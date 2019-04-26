@@ -1,10 +1,13 @@
 #!/bin/bash
 
-if ! grep -xqs VB_OLD_PATH /etc/environment
+mkdir -p /etc/virtualbucket && cp proto_config /etc/virtualbucket/config && cp proto_activate proto_deactivate /etc/virtualbucket/.
+
+if ! grep -xqs VB_ACTIVE /etc/environment
 then
-    mkdir /etc/virtualbucket && cp proto_config /etc/virtualbucket/config && cp proto_activate proto_deactivate /etc/virtualbucket/.
     echo -e 'VB_ACTIVE=false' >> /etc/environment
+else
+    sed -i 's@VB_ACTIVE=.*$@VB_ACTIVE=false@' /etc/environment
+    PATH=$(echo $PATH | sed 's@/.*/.env/bin:@@')
 fi
-#cp -n proto_ev.sh /etc/profile.d/vb_ev.sh && /etc/profile.d/vb_ev.sh
 
 

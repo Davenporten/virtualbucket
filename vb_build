@@ -6,3 +6,10 @@
 # TODO: Add catches and messages for missing dependencies
 mkdir ./$1 && cd ./$1 && virtualenv -p python3 .env && cp /etc/virtualbucket/proto_activate ./activate && cp /etc/virtualbucket/proto_deactivate ./deactivate
 
+while read -r line
+do
+    echo $line
+    if ! [[ $line == \#* ]] ; then
+        ./.env/bin/pip install "$line"
+    fi
+done < "/etc/virtualbucket/config"

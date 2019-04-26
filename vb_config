@@ -1,0 +1,4 @@
+# The purpose of this is to give the user a UI in order to specify what 
+# packets and tools will be available in the bucket. While this is useful
+# development of it will be put on hold as it isn't very necessary and 
+# the user can easily modify the proto_config or /etc/virtualbucket/config

@@ -2,4 +2,3 @@
 
 PATH=$(echo $PATH | sed 's@/.*/.env/bin:@@')
 sudo sed -i 's/VB_ACTIVE=true/VB_ACTIVE=false/' /etc/environment
-sudo sed -i 's@VB_OLD_PATH=.*$@VB_OLD_PATH=@' /etc/environment
