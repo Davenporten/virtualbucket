@@ -1,6 +1,13 @@
-# virtualbucket
+# VirtualBucket
 The purpose of *virtualbucket* is to have a modular way of turning on or off different services/tools/apps without impacting the overall system. Basically it is [virtualenv](https://github.com/pypa/virtualenv), running tools in an isolated environment, but allowing you to still have access to all other tools and functionality on your machine. For example, for some reason you couldn't install python3 globally onto your machine, but needed to work with some other tool that is on the machine, you could activate virtualbucket with python3 installed, using python3 as if it were installed on your machine, then deactivate it, without your system being effected.
 
+## Using VirtualBucket
+VirtualBucket does two things: 1) creates buckets, and 2) runs buckets, giving you access to whatever tools you included when you created the bucket.
+
+### Creating Buckets
+
+
+**Note**: Below is not complete and needs to be updated.
 ## Explanation of Files
 Any file with the prefix *proto_* will be files that are customized for a given build of virtualbucket, or changed in some other way to the system. *vb_* prefix means it will not be changed, but moved to a global location like /usr/bin/ for the user to have whenever. The proto_ prefix will not be present in buckets that were build by a user.
 
