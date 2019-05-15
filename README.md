@@ -52,23 +52,26 @@ If you would like to remove anything that setup created run
 
 **Note**: Below is not complete and needs to be updated.
 ## Explanation of Files
-Any file with the prefix *proto_* will be files that are customized for a given build of virtualbucket, or changed in some other way to the system. *vb_* prefix means it will not be changed, but moved to a global location like /usr/bin/ for the user to have whenever. The proto_ prefix will not be present in buckets that were build by a user.
+Any file with the prefix *proto_* will be files that are customized for a given build of virtualbucket, or changed in some other way to the system. *vb_* prefix means it will not be changed, but moved to a global location like /usr/bin/ for the user to have whenever. The proto_ prefix will not be present in buckets that are built by a user.
 
-* setup
-
-   Creates all needed dirs, files, and places needed scripts in a global scope. Should be the first thing that's run.
 * proto_activate
 
-   Sets the VB_ACTIVE variable to true, saves the current PATH of the machine, and set a new PATH for using virtualbucket based off of where the bucket is located in the file system.
+   Sets the VB_ACTIVE variable to true, saves the current PATH of the machine, and sets a new PATH for using virtualbucket based off of where the bucket is located in the file system.
 * proto_config
 
    Tells vb what packages should be installed for a given bucket at the time of vb_build being run.
 * proto_deactivate
 
    Sets the VB_ACTIVE variable to false, resets PATH to the saved PATH from proto_activate.
-* proto_ev.sh
+* proto_remove
 
-   To be placed in /etc/profile.d/virtualbox/, creates all needed environment variables.
+   Similar to vb_remove, but for a bucket rather than the tool that creates the buckets: Removes all files and scripts created and placed by proto_setup. Will not work if vb is active.
+* proto_setup
+
+   Similar to vb_setup, but for a bucket rather than the tool that creates the buckers: creates all needed dirs, files, and places needed scripts in a global scope. Should be the first thing that's run.
+* set_my_bash
+
+   Simply script for ensuring that your environment's bash is being used.
 * vb_build
 
    Based off of the current configuration will create a dir (bucket) that can be activated, deactivated, etc.
@@ -78,6 +81,9 @@ Any file with the prefix *proto_* will be files that are customized for a given 
 * vb_remove
 
    Removes all files and scripts created and placed by proto_setup. Will not work if vb is active.
+* vb_setup
+
+   Creates all needed dirs, files, and places needed scripts in a global scope. Should be the first thing that's run.
 * vb_tarup
 
    With the name of a given bucket passed to it this will create a .tar.gz with the entire bucket inside. It can then be moved to wherever the user needs it, even to another machine.
